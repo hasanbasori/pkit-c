@@ -1,0 +1,47 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //c05 ex00\
+\
+\
+#include <stdio.h>\
+\
+int ft_iterative_factorial(int nb)\
+\{\
+    int a;\
+    int b;\
+    int result;\
+    \
+    a = 1 ;\
+    result = 1;\
+    \
+    if ( nb > 0)\
+        while ( a++ < nb)\
+        \{\
+            result = a*result ;\
+            printf("Round %d result is= %d\\n" ,a ,result );\
+        \}\
+    else\
+        \{\
+            result = 0 ;            \
+            printf("Round %d error %d\\n" ,a ,result );\
+        \}\
+    \
+   return(result);\
+    \
+\}\
+\
+\
+\
+int main()\
+\{\
+    int nb;\
+    printf("Result = %d\\n " ,ft_iterative_factorial(5)  );\
+    \
+\}\
+\
+}

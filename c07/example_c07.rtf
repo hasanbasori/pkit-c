@@ -1,0 +1,227 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red251\green0\blue7;\red255\green255\blue11;
+}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c100000\c12195\c0;\cssrgb\c100000\c100000\c0;
+}
+\margl1440\margr1440\vieww20500\viewh13080\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf2 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0 \cf3 cat ex00/ft_strdup.c \
+
+\fs28 \cf2 \
+/* ************************************************************************** */\
+/*                                                                            */\
+/*                                                        :::      ::::::::   */\
+/*   ft_strdup.c                                        :+:      :+:    :+:   */\
+/*                                                    +:+ +:+         +:+     */\
+/* ************************************************************************** */\
+\
+#include <stdlib.h>\
+\
+char	*ft_strdup(char *src)\
+\{\
+	int		len;\
+	int		i;\
+	char	*dest;\
+\
+	len = 0;\
+	while (src[len] != '\\0')\
+	\{\
+		len++;\
+	\}\
+	dest = (char *)malloc(sizeof(char) * (len + 1));\
+	if (dest == NULL)\
+	\{\
+		return (NULL);\
+	\}\
+	i = 0;\
+	while (src[i] != '\\0')\
+	\{\
+		dest[i] = src[i];\
+		i++;\
+	\}\
+	dest[i] = '\\0';\
+	return (dest);\
+\}\
+/*\
+#incldue <stdio.h>\
+#include <string.h>\
+\cf4 int main(void)\cf2 \
+\{\
+    char    *str;\
+    char    *new_str;\
+\
+    str = "Pasquale Sucks";\
+    new_str = ft_strdup(str);\
+    printf("%s\\n", new_str);\
+\}*/\
+\
+
+\fs36 \cf3 cat ex01/ft_range.c 
+\fs28 \cf2 \
+/* ************************************************************************** */\
+/*                                                                            */\
+/*                                                        :::      ::::::::   */\
+/*   ft_range.c                                         :+:      :+:    :+:   */\
+/*                                                    +:+ +:+         +:+     */\
+/* ************************************************************************** */\
+\
+#include <stdlib.h>\
+\
+int	*ft_range(int min, int max)\
+\{\
+	int	i;\
+	int	*result;\
+\
+	if (min >= max)\
+	\{\
+		return (0);\
+	\}\
+	i = max - min;\
+	result = (int *)malloc(sizeof(int) * (i));\
+	if (result == NULL)\
+	\{\
+		return (NULL);\
+	\}\
+	i = 0;\
+	while (max > min)\
+	\{\
+		result[i] = min;\
+		min++;\
+		i++;\
+	\}\
+	return (result);\
+\}\
+/*\
+#include <stdio.h>\
+\
+\cf4 int main(void)\cf2 \
+\{\
+	int	min;\
+	int	max;\
+	int	*tab;\
+	int	i = 0;\
+	int	size;\
+\}\
+*/\
+\
+
+\fs36 \cf3 cat ex02/ft_ultimate_range.c 
+\fs28 \cf2 \
+/* ************************************************************************** */\
+/*                                                                            */\
+/*                                                        :::      ::::::::   */\
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */\
+/*                                                    +:+ +:+         +:+     */\
+/* ************************************************************************** */\
+\
+#include <stdlib.h>\
+\
+int	ft_ultimate_range(int **range, int min, int max)\
+\{\
+	int	i;\
+	int	*result;\
+\
+	if (min >= max)\
+	\{\
+		*range = NULL;\
+		return (0);\
+	\}\
+	i = max - min;\
+	result = malloc(sizeof(int) * (i));\
+	if (result == NULL)\
+	\{\
+		*range = NULL;\
+		return (-1);\
+	\}\
+	*range = result;\
+	i = 0;\
+	while (max > min)\
+	\{\
+		result[i] = min;\
+		min++;\
+		i++;\
+	\}\
+	return (i);\
+\}\
+\
+/*\
+#include <stdio.h>\
+\
+\cf4 int main(void)\cf2 \
+\{\
+	int	min;\
+	int	max;\
+	int	*tab;\
+	int	size;\
+	int	i;\
+	\
+	i = 0;\
+	min = 5;\
+	max = 10;\
+	size = ft_ultimate_range(&tab, min, max);\
+	while(i < size)\
+	\{\
+		printf("%d, ", tab[i]);\
+		i++;\
+	\}\
+\}*/\
+\
+
+\fs36 \cf3 cat ex03/ft_strjoin.c 
+\fs28 \cf2 \
+/* ************************************************************************** */\
+/*                                                                            */\
+/*                                                        :::      ::::::::   */\
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */\
+/*                                                    +:+ +:+         +:+     */\
+/* ************************************************************************** */\
+\
+#include <stdlib.h>\
+\
+char	*ft_strjoin(int size, char **strs, char *sep)\
+\{\
+	char	*s;\
+	int		i;\
+	int		j;\
+	int		c;\
+\
+	s = malloc(sizeof(strs));\
+	i = 0;\
+	c = 0;\
+	while (i < size)\
+	\{\
+		j = 0;\
+		while (strs[i][j] != '\\0')\
+		\{\
+			s[c++] = strs[i][j++];\
+		\}\
+		j = 0;\
+		while (sep[j] != '\\0' && i != size - 1)\
+		\{\
+			s[c++] = sep[j++];\
+		\}\
+		i++;\
+	\}\
+	s[c] = '\\0';\
+	return (s);\
+\}\
+/*\
+#include <stdio.h>\
+\cf4 int	main(void)\cf2 \
+\{\
+	char	*tab[4];\
+	tab[0] = " ";\
+	tab[1] = " ";\
+	tab[2] = " ";\
+	tab[3] = " ";\
+	printf("%s", ft_strjoin(4, tab, "Pasquale"));\
+	return (0);\
+\}*/\
+\
+\
+}
