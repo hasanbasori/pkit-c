@@ -1,0 +1,364 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red180\green36\blue25;\red47\green180\blue29;
+\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c76409\c21698\c12524;\cssrgb\c20238\c73898\c14947;
+\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 \
+kdanchal@z2t10c2 eva % git clone git@vogsphere.42bangkok.com:vogsphere/intra-uuid-983bd6ff-ab3f-41a0-b941-43538ecc6544-4964025-psathiar 05_pu_c02\
+Cloning into '05_pu_c02'...\
+remote: Enumerating objects: 26, done.\
+remote: Counting objects: 100% (26/26), done.\
+remote: Compressing objects: 100% (15/15), done.\
+remote: Total 26 (delta 11), reused 0 (delta 0)\
+Receiving objects: 100% (26/26), done.\
+Resolving deltas: 100% (11/11), done.\
+kdanchal@z2t10c2 eva % ls\
+01_Pan_shell00 		03_pan2_shell01		04_queen\
+02_mai			03_pan2_shell01_copy	05_pu_c02\
+kdanchal@z2t10c2 eva % norminette \
+05_pu_c02/ex00/ft_strcpy.c: OK!\
+05_pu_c02/ex01/ft_strncpy.c: OK!\
+05_pu_c02/ex02/ft_str_is_alpha.c: OK!\
+05_pu_c02/ex03/ft_str_is_numeric.c: OK!\
+05_pu_c02/ex04/ft_str_is_lowercase.c: OK!\
+05_pu_c02/ex05/ft_str_is_uppercase.c: OK!\
+05_pu_c02/ex06/ft_str_is_printable.c: OK!\
+05_pu_c02/ex07/ft_strupcase.c: OK!\
+05_pu_c02/ex08/ft_strlowcase.c: OK!\
+05_pu_c02/ex09/ft_strcapitalize.c: OK!\
+05_pu_c02/ex10/ft_strlcpy.c: OK!\
+05_pu_c02/ex11/ft_putstr_non_printable.c: OK!\
+kdanchal@z2t10c2 eva % cd 05_pu_c02 \
+kdanchal@z2t10c2 05_pu_c02 % vim ex00/ft_strcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % man strcpy\
+kdanchal@z2t10c2 05_pu_c02 % \
+kdanchal@z2t10c2 05_pu_c02 % vim ex00 \
+kdanchal@z2t10c2 05_pu_c02 % vim ex00/ft_strcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex00/ft_strcpy.c \
+
+\f1\b ex00/ft_strcpy.c:31:7: \cf3 error: \cf2 incompatible pointer to integer conversion
+\f0\b0 \
+
+\f1\b       initializing 'char' with an expression of type 'char [5]'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        char arr = "test";\
+
+\f1\b \cf4              ^     ~~~~~~
+\f0\b0 \cf2 \
+
+\f1\b ex00/ft_strcpy.c:32:7: \cf3 error: \cf2 incompatible pointer to integer conversion
+\f0\b0 \
+
+\f1\b       initializing 'char' with an expression of type 'char [3]'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        char arr2 = "ok";\
+
+\f1\b \cf4              ^      ~~~~
+\f0\b0 \cf2 \
+
+\f1\b ex00/ft_strcpy.c:34:12: \cf3 error: \cf2 incompatible integer to pointer conversion
+\f0\b0 \
+
+\f1\b       passing 'char' to parameter of type 'char *'; take the address with &
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        ft_strcpy(arr, arr2);\
+
+\f1\b \cf4                   ^~~
+\f0\b0 \cf2 \
+\cf4                   &\cf2 \
+
+\f1\b ex00/ft_strcpy.c:15:23: note: 
+\f0\b0 passing argument to parameter 'dest' here\
+char    *ft_strcpy(char *dest, char *src)\
+
+\f1\b \cf4                          ^
+\f0\b0 \cf2 \
+
+\f1\b ex00/ft_strcpy.c:34:17: \cf3 error: \cf2 incompatible integer to pointer conversion
+\f0\b0 \
+
+\f1\b       passing 'char' to parameter of type 'char *'; take the address with &
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        ft_strcpy(arr, arr2);\
+
+\f1\b \cf4                        ^~~~
+\f0\b0 \cf2 \
+\cf4                        &\cf2 \
+
+\f1\b ex00/ft_strcpy.c:15:35: note: 
+\f0\b0 passing argument to parameter 'src' here\
+char    *ft_strcpy(char *dest, char *src)\
+
+\f1\b \cf4                                      ^
+\f0\b0 \cf2 \
+
+\f1\b ex00/ft_strcpy.c:35:15: \cf3 error: \cf2 format specifies type 'char *' but the argument
+\f0\b0 \
+
+\f1\b       has type 'char' [-Werror,-Wformat]
+\f0\b0 \
+        printf("%s", arr);\
+
+\f1\b \cf4                 ~~   ^~~
+\f0\b0 \cf2 \
+\cf4                 %c\cf2 \
+5 errors generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex00/ft_strcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex00/ft_strcpy.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+ok
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                              kdanchal@z2t10c2 05_pu_c02 % vim ex01/ft_strncpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex01/ft_strncpy.c \
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+wollo
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                           kdanchal@z2t10c2 05_pu_c02 % vim ex01/ft_strncpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex01/ft_strncpy.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out                                   \
+wollooooo
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                       kdanchal@z2t10c2 05_pu_c02 % vim ex02/ft_str_is_alpha.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex02/ft_str_is_alpha.c \
+
+\f1\b ex02/ft_str_is_alpha.c:33:2: \cf3 error: \cf2 use of undeclared identifier 'arr'
+\f0\b0 \
+        arr[] = "abcABC";\
+
+\f1\b \cf4         ^
+\f0\b0 \cf2 \
+
+\f1\b ex02/ft_str_is_alpha.c:33:6: \cf3 error: \cf2 expected expression
+\f0\b0 \
+        arr[] = "abcABC";\
+
+\f1\b \cf4             ^
+\f0\b0 \cf2 \
+
+\f1\b ex02/ft_str_is_alpha.c:34:31: \cf3 error: \cf2 use of undeclared identifier 'arr'
+\f0\b0 \
+        printf("%d", ft_str_is_alpha(arr));\
+
+\f1\b \cf4                                      ^
+\f0\b0 \cf2 \
+3 errors generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex02/ft_str_is_alpha.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex02/ft_str_is_alpha.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+1
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                               kdanchal@z2t10c2 05_pu_c02 % vim ex02/ft_str_is_alpha.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex02/ft_str_is_alpha.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out                                        \
+0
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                               kdanchal@z2t10c2 05_pu_c02 % vim ex07/ft_strupcase.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex07/ft_strupcase.c    \
+
+\f1\b ex07/ft_strupcase.c:33:53: \cf3 error: \cf2 expected ')'
+\f0\b0 \
+        printf("%s", ft_strupcase("i am testing something");\
+
+\f1\b \cf4                                                            ^
+\f0\b0 \cf2 \
+
+\f1\b ex07/ft_strupcase.c:33:8: note: 
+\f0\b0 to match this '('\
+        printf("%s", ft_strupcase("i am testing something");\
+
+\f1\b \cf4               ^
+\f0\b0 \cf2 \
+1 error generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex07/ft_strupcase.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex07/ft_strupcase.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+zsh: bus error  ./a.out\
+kdanchal@z2t10c2 05_pu_c02 % vim ex07/ft_strupcase.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex07/ft_strupcase.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+I AM TESTING SOMETHING
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                          kdanchal@z2t10c2 05_pu_c02 % vim ex10/ft_strlcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex10/ft_strlcpy.c  \
+
+\f1\b ex10/ft_strlcpy.c:36:7: \cf3 error: \cf2 incompatible pointer to integer conversion
+\f0\b0 \
+
+\f1\b       initializing 'char' with an expression of type 'char [6]'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        char arr = "hello";\
+
+\f1\b \cf4              ^     ~~~~~~~
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:37:7: \cf3 error: \cf2 incompatible pointer to integer conversion
+\f0\b0 \
+
+\f1\b       initializing 'char' with an expression of type 'char [6]'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        char arr2 = "world";\
+
+\f1\b \cf4              ^      ~~~~~~~
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:2: \cf3 error: \cf2 implicitly declaring library function 'printf'
+\f0\b0 \
+
+\f1\b       with type 'int (const char *, ...)'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wimplicit-function-declaration]
+\f0\b0 \
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3);\
+
+\f1\b \cf4         ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:2: note: 
+\f0\b0 include the header <stdio.h> or explicitly provide\
+      a declaration for 'printf'\
+
+\f1\b ex10/ft_strlcpy.c:38:28: \cf3 error: \cf2 incompatible integer to pointer conversion
+\f0\b0 \
+
+\f1\b       passing 'char' to parameter of type 'char *'; take the address with &
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3);\
+
+\f1\b \cf4                                   ^~~
+\f0\b0 \cf2 \
+\cf4                                   &\cf2 \
+
+\f1\b ex10/ft_strlcpy.c:13:31: note: 
+\f0\b0 passing argument to parameter 'dest' here\
+unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size)\
+
+\f1\b \cf4                                  ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:33: \cf3 error: \cf2 incompatible integer to pointer conversion
+\f0\b0 \
+
+\f1\b       passing 'char' to parameter of type 'char *'; take the address with &
+\f0\b0 \
+
+\f1\b       [-Werror,-Wint-conversion]
+\f0\b0 \
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3);\
+
+\f1\b \cf4                                        ^~~~
+\f0\b0 \cf2 \
+\cf4                                        &\cf2 \
+
+\f1\b ex10/ft_strlcpy.c:13:43: note: 
+\f0\b0 passing argument to parameter 'src' here\
+unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size)\
+
+\f1\b \cf4                                              ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:41: \cf3 error: \cf2 expected ')'
+\f0\b0 \
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3);\
+
+\f1\b \cf4                                                ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:8: note: 
+\f0\b0 to match this '('\
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3);\
+
+\f1\b \cf4               ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:39:16: \cf3 error: \cf2 format specifies type 'char *' but the argument
+\f0\b0 \
+
+\f1\b       has type 'char' [-Werror,-Wformat]
+\f0\b0 \
+        printf("%s" , arr);\
+
+\f1\b \cf4                 ~~    ^~~
+\f0\b0 \cf2 \
+\cf4                 %c\cf2 \
+7 errors generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex10/ft_strlcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex10/ft_strlcpy.c\
+
+\f1\b ex10/ft_strlcpy.c:38:2: \cf3 error: \cf2 implicitly declaring library function 'printf'
+\f0\b0 \
+
+\f1\b       with type 'int (const char *, ...)'
+\f0\b0 \
+
+\f1\b       [-Werror,-Wimplicit-function-declaration]
+\f0\b0 \
+        printf("%d\\n", ft_strlcpy(arr, arr2, 3));\
+
+\f1\b \cf4         ^
+\f0\b0 \cf2 \
+
+\f1\b ex10/ft_strlcpy.c:38:2: note: 
+\f0\b0 include the header <stdio.h> or explicitly provide\
+      a declaration for 'printf'\
+1 error generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex10/ft_strlcpy.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex10/ft_strlcpy.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+5\
+wo
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                                              kdanchal@z2t10c2 05_pu_c02 % vim ex11/ft_putstr_non_printable.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex11/ft_putstr_non_printable.c\
+
+\f1\b ex11/ft_putstr_non_printable.c:46:7: \cf3 error: \cf2 definition of variable with array
+\f0\b0 \
+
+\f1\b       type needs an explicit size or an initializer
+\f0\b0 \
+        char arr[] "abcaedasd\\nasdwasd";\
+
+\f1\b \cf4              ^
+\f0\b0 \cf2 \
+
+\f1\b ex11/ft_putstr_non_printable.c:46:12: \cf3 error: \cf2 expected ';' at end of declaration
+\f0\b0 \
+        char arr[] "abcaedasd\\nasdwasd";\
+
+\f1\b \cf4                   ^
+\f0\b0 \cf2 \
+\cf4                   ;\cf2 \
+2 errors generated.\
+kdanchal@z2t10c2 05_pu_c02 % vim ex11 \
+kdanchal@z2t10c2 05_pu_c02 % vim ex11/ft_putstr_non_printable.c \
+kdanchal@z2t10c2 05_pu_c02 % cc -Werror -Wall -Wextra ex11/ft_putstr_non_printable.c\
+kdanchal@z2t10c2 05_pu_c02 % ./a.out \
+abcaedasd\\0aasdwasd
+\f1\b \cf5 \cb2 %
+\f0\b0 \cf2 \cb1                                                             kdanchal@z2t10c2 05_pu_c02 % \
+}

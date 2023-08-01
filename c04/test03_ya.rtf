@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;}
+\margl1440\margr1440\vieww19480\viewh16580\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \CocoaLigature0 #include <stdio.h>\
+#include <unistd.h>\
+\
+int	ft_atoi(char *str)\
+\{\
+	int	number;\
+	int	minus_count;\
+	int	index;\
+\
+	number = 0;\
+	minus_count = 0;\
+	index = 0;\
+	while ((str[index] > 8 && str[index] < 14) || (str[index] == 32))\
+		index++;\
+	while (str[index] != 0 && (str[index] == 45 || str[index] == 43))\
+	\{\
+		if (str[index] == 45)\
+			minus_count++;\
+		index++;\
+	\}\
+	while (str[index] != 0 && (str[index] >= 48 && str[index] <= 57))\
+	\{\
+		number = number * 10;\
+		number = number + (str[index] - 48);\
+		index++;\
+	\}\
+	if (minus_count % 2 == 1)\
+		number = number * (-1);\
+	return (number);\
+	\
+\}\
+\
+int main(void)\
+\
+\{\
+    printf( "%d\\n" ,ft_atoi( "---+--+1234ab567"));\
+    return (0);\
+\}\
+}

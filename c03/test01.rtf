@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh13280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // c03. ex01\
+#include <unistd.h>\
+int	ft_strncmp(char *s1, char *s2, unsigned int n)\
+\{\
+	if (n < 1)\
+	\{\
+		return (0);\
+	\}\
+	while (*s1 == *s2 && --n && *s1)\
+	\{\
+		s1++;\
+		s2++;\
+	\}\
+	return (*s1 - *s2);\
+\}\
+int	main(void)\
+\{\
+	char	*string_1 = "ABCDEF";\
+	char	*string_2 = "ACCDDA";\
+	char	*string_3 = "";\
+	char	*string_4 = "";\
+	\
+	int n = 4;\
+	int	i;\
+	int	j;\
+	int	ireal;\
+	int	jreal;\
+	int	iempty;\
+	int	jempty;\
+\
+	i = ft_strncmp(string_1, string_2, n);\
+	printf("%d string_1 - string_2: %d\\n", n, i);\
+	j = ft_strncmp(string_2, string_1, n);\
+	printf("%d string_2 - string_1: %d\\n\\n", n, j);\
+	\
+	\
+	ireal = strncmp(string_1, string_2, n);\
+	printf("%d string_1 - string_2: %d\\n", n, ireal);\
+	jreal = strncmp(string_2, string_1, n);\
+	printf("%d string_2 - string_1: %d\\n\\n", n, jreal);\
+	\
+	\
+	iempty = ft_strncmp(string_3, string_4, n);\
+	printf("%d string_1 - string_2: %d\\n", n, iempty);\
+	jempty = strncmp(string_3, string_4, n);\
+	printf("%d string_1 - string_2: %d\\n", n, jempty);\
+\
+	return (0);\
+\}}

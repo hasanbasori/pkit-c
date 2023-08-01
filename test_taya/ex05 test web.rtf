@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 #include <unistd.h>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+int	ft_x(int arr[3])\
+\{\
+	arr[2] = arr[1] + 1;\
+	while (arr[2] <= '9' )\
+	\{\
+		write (1, &arr[0], 1);\
+		write (1, &arr[1], 1);\
+		write (1, &arr[2], 1);\
+		if (arr[0] == '7')\
+		\{\
+			break ;\
+		\}\
+		write (1, ", ", 2);\
+		arr[2]++;\
+	\}\
+	arr[1]++;\
+\}\
+\
+void	ft_print_numbers(void)\
+\{\
+	int	arr[3];\
+\
+	arr[0] = '0';\
+	while (arr[0] <= '9')\
+	\{\
+		arr[1] = arr[0] + 1;\
+		while (arr[1] <= '9')\
+		\{\
+			ft_x(arr);\
+			arr[1]++;\
+		\}\
+		arr[0]++;\
+	\}\
+\}\
+\
+int	main(void)\
+\{\
+	ft_print_numbers();\
+\}\
+\
+}
