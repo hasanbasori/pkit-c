@@ -1,0 +1,243 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue11;\red0\green0\blue0;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c0;\csgray\c0;\cssrgb\c0\c0\c0;
+}
+\margl1440\margr1440\vieww19480\viewh16580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 //c05 ex00\
+#include <stdio.h>\
+int ft_iterative_factorial(int nb)\cf0 \
+\{\
+    int a;\
+    int b;\
+    int result;\
+    \
+    a = 1 ;\
+    result = 1;\
+    \
+    if ( nb > 0)\
+        while ( a++ < nb)\
+        \{\
+            result = a*result ;\
+            printf("Round %d result is= %d\\n" ,a ,result );\
+        \}\
+    else\
+        \{\
+            result = 0 ;            \
+            printf("Round %d error %d\\n" ,a ,result );\
+        \}\
+    \
+   return(result);\
+\}\
+\
+int main()\
+\{\
+    int nb;\
+    printf("Result = %d\\n " ,ft_iterative_factorial(5)  );\
+    \
+\}\
+\
+\cf2 Ex01\
+#include <unistd.h>\
+#include <stdio.h>\
+\
+int    ft_recursive_factorial(int nb)\cf0 \
+\{\
+    if (nb < 0)\
+        return (0);\
+        \
+        \
+    if (nb == 1 || nb == 0)\
+        return (1);\
+    else\
+        return (nb * ft_recursive_factorial(nb - 1));\
+\}\
+int main()\
+\{\
+    \
+    printf("%d" , ft_recursive_factorial(4)  );\
+\}\
+\
+\cf2 \
+Ex02\
+#include <stdio.h>\
+int ft_iterative_power(int nb, int power)\cf0 \
+\{\
+    int a;\
+    int b;\
+    int result;\
+    \
+    a = 0;\
+    b = nb;\
+    result =1;\
+\
+    if ( power == 0 && nb ==0)\
+            result =1;\
+    else\
+        if ( power < 0)\
+            result =0;\
+    \
+    while ( a < power )\
+    \{\
+        result = b * result;a\
+        a++;\
+        printf("round %d result %d\\n",a ,result);\
+    \}\
+    \
+\
+   return(result);\
+    \
+\}\
+\
+int main()\
+\{\
+    printf("%d\\n " ,ft_iterative_power(1,0  ) );\
+\}\
+\cf2 \
+\
+Ex03
+\fs28 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs30 \cf2 \CocoaLigature0 #includes <unistd.h>\
+int	ft_recursive_power(int nb, int power)\cf3 \
+\{\
+	int	a;\
+	int	result;\
+\
+	a = 1;\
+	result = nb;\
+	if (power == 0 && nb == 0)\
+		result = 1;\
+	else if (power < 0)\
+		result = 1;\
+	while (a < power)\
+	\{\
+		result = nb * ft_recursive_power(nb, power - 1);\
+		a++;\
+	\}\
+	return (result);\
+\}\
+\
+
+\f0\fs28 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 int main()\
+\{\
+    printf("%d\\n " ,
+\f2\fs24 \cf4 \expnd0\expndtw0\kerning0
+ft_recursive_power
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 (2,-3)   );\
+\}\
+\
+\cf2 Ex04\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf2 #include <stdio.h>\
+\
+int ft_fibo(int i)\cf0 \
+\{\
+    int c;\
+    c = 0;\
+    \
+    if (i <=0 )\
+    \{\
+        return (-1);\
+    \}\
+    else if ( i == 1)\
+    \{\
+        return (1);\
+    \}\
+    else\
+    \{\
+        return (ft_fibo(i-1) + ft_fibo(i-2));\
+    \}\
+    \
+\
+    \
+    return (c);\
+\}\
+\
+int main(void)\
+\{\
+   printf("%d",  ft_fibo(1));\
+\}\
+\
+\cf2 Ex05\
+#include <unistd.h>\
+#include <stdio.h>\
+\
+int ft_ft(int a)\cf0 \
+\{\
+    int b;\
+    int i;\
+    int ans;\
+    int c;\
+    b =0;\
+    b = a /2;\
+    i=2;\
+    \
+    while ( i < b)\
+    \{\
+        ans = a % i ;\
+        if ( ans == 0)\
+        \{\
+            c = i*i;\
+            if (c == a)\
+                return (i);\
+        \}\
+        i++;\
+    \}    \
+    return (9);\
+    \
+\}\
+\
+\
+\
+int main(void)\
+\{\
+    printf ("%d", ft_ft(121  ));\
+    \
+\}\
+\cf2 \
+Ex06\
+#include <stdio.h>\
+int ft_ft(int n)\cf0 \
+\{\
+    int ans;\
+    int check;\
+    \
+    check = 2;\
+\
+    if ( n == 0 || n ==1)\
+            return (0);\
+    \
+    while ( check < n )\
+    \{\
+        ans = n % check;\
+        if ( ans == 0)\
+        \{\
+            printf ("non cha por \\n");\
+            return (0);\
+        \}\
+        check++;\
+    \}\
+    \
+    printf ("cha por ma \\n");\
+    return (1);\
+\}\
+\
+int main(void) \
+\{\
+    printf( "print 1 if cha por \\n");\
+    printf( "%d" ,ft_ft( 0 )  );\
+\
+\}\
+\
+\
+\
+}
